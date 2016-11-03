@@ -26766,7 +26766,7 @@
 			var requestURL = OPEN_WEATHER_MAP_URL + '&q=' + encodedLocation;
 
 			return _axios2.default.get(requestURL).then(function (res) {
-				if (res.data.cod && res.data.message) {
+				if (res.data.message) {
 					throw new Error(res.data.message);
 				} else {
 					return res.data.main.temp;
