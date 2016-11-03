@@ -8,7 +8,7 @@ module.exports = {
 	devtools: 'eval-source-map',
 	entry: './src/app.js',
 	output: {
-		path: __dirname + '/dist/',
+		path: __dirname + '/public/',
 		filename: 'bundle.js'
 	},
 	module: {
@@ -22,11 +22,6 @@ module.exports = {
 				} 
 			}
 		]
-	},
-	devServer: {
-		port: 5050,
-		colors: true,
-		historyApiFallback: true
 	},
 	plugins: [htmlWebpackPluginConfig]
 };
