@@ -68,7 +68,7 @@
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Examples = __webpack_require__(260);
+	var _Examples = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/Examples\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _Examples2 = _interopRequireDefault(_Examples);
 
@@ -28283,32 +28283,6 @@
 	};
 
 	exports.default = About;
-
-/***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Examples = function Examples(props) {
-		return _react2.default.createElement(
-			'h2',
-			null,
-			'Examples Component'
-		);
-	};
-
-	exports.default = Examples;
 
 /***/ }
 /******/ ]);
