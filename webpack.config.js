@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var htmlWebpackPluginConfig = new htmlWebpackPlugin({
 	template: './src/main.html',
@@ -6,7 +7,20 @@ var htmlWebpackPluginConfig = new htmlWebpackPlugin({
 });
 module.exports = {
 	devtools: 'eval-source-map',
-	entry: './src/app.js',
+	entry: [
+		'script!jquery/dist/jquery.min.js',
+		'script!foundation-sites/dist/foundation.min.js',
+		'./src/app.js'
+	],
+	externals: {
+		jquery: 'jQuery'
+	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			'$': 'jquery',
+			'jQuery': 'jquery'
+		})
+	],
 	output: {
 		path: __dirname + '/public/',
 		filename: 'bundle.js'

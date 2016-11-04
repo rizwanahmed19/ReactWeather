@@ -6,6 +6,9 @@ import Weather from './components/Weather';
 import About from './components/About';
 import Examples from './components/Examples';
 
+import 'style!css!foundation-sites/dist/foundation.min.css';
+$(document).foundation();
+
 ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
