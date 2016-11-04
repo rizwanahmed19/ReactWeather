@@ -3,7 +3,7 @@ import React, {Component, PropTypes} from 'react';
 var WeatherMessage = props => {
 		var {location, temp} = props;
 		return (
-			<h1>It is {props.temp} in {props.location}</h1>
+			<h3 className='text-center'>It is {props.temp}&#176;C in {props.location}</h3>
 		);
 }
 

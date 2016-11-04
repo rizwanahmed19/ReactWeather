@@ -26744,7 +26744,7 @@
 					if (isLoading) {
 						return _react2.default.createElement(
 							'h3',
-							null,
+							{ className: 'text-center' },
 							'Fetching weather...'
 						);
 					} else if (location && temp) {
@@ -26756,7 +26756,7 @@
 					null,
 					_react2.default.createElement(
 						'h2',
-						null,
+						{ className: 'text-center' },
 						'Get Weather'
 					),
 					_react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch.bind(this) }),
@@ -26826,7 +26826,7 @@
 						_react2.default.createElement('input', { type: 'text', placeholder: 'Enter City Name', ref: 'location' }),
 						_react2.default.createElement(
 							'button',
-							null,
+							{ className: 'button expanded hollow' },
 							'Get weather!'
 						)
 					)
@@ -26864,11 +26864,11 @@
 		var temp = props.temp;
 
 		return _react2.default.createElement(
-			'h1',
-			null,
+			'h3',
+			{ className: 'text-center' },
 			'It is ',
 			props.temp,
-			' in ',
+			'°C in ',
 			props.location
 		);
 	};

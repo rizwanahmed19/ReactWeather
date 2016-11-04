@@ -30,14 +30,14 @@ class Weather extends Component {
 
 		function renderMessage(){
 			if (isLoading) {
-				return <h3>Fetching weather...</h3>;
+				return <h3 className='text-center'>Fetching weather...</h3>;
 			} else if(location && temp) {
 					return <WeatherMessage location={location} temp={temp} />;
 			}
 		}
 		return (
 			<div>
-				<h2>Get Weather</h2>
+				<h2 className='text-center'>Get Weather</h2>
 				<WeatherForm onSearch={this.handleSearch.bind(this)} />
 				{renderMessage()}
 			</div>
