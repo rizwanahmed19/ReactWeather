@@ -1,15 +1,47 @@
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
 
-var Nav = props => {
-	return (
-			<div>
-				<h1>Nav Component</h1>
-				<IndexLink activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/">Weather</IndexLink>
-				<Link activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/about">About</Link>
-				<Link activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/examples">Examples</Link>
+class Nav extends Component {
+	onSearch(e){
+		e.preventDefault();
+		alert('Not yet wired up!')
+	}
+	render(){
+		return (
+			<div className='top-bar'>
+				<div className='top-bar-left'>
+					<ul className='menu'>
+						<li className='menu-text'>React Weather App</li>
+						<li>
+							<IndexLink activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/">Weather</IndexLink>
+						</li>
+						<li>
+							<Link activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/about">About</Link>
+						</li>
+						<li>
+							<Link activeClassName="active" activeStyle={{fontWeight: 'bold'}} to="/examples">Examples</Link>					
+						</li>
+					</ul>
+				</div>
+				<div className='top-bar-right'>
+					<form onSubmit={this.onSearch}>
+						<ul className='menu'>
+							<li>
+								<input type='text' placeholder='Search weather' />
+							</li>
+							<li>
+								<input type='submit' className='button' value='Get Weather' />
+							</li>
+						</ul>
+					</form>
+				</div>
 			</div>
-	);
+		);
+	}
 }
 
 export default Nav;
+
+var old = (
+				<h1>Nav Component</h1>
+);
