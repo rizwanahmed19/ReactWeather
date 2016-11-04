@@ -26526,11 +26526,14 @@
 			null,
 			_react2.default.createElement(_Nav2.default, null),
 			_react2.default.createElement(
-				'h1',
-				null,
-				'Hello React Route!'
-			),
-			props.children
+				'div',
+				{ className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'columns medium-6 large-4 small-centered' },
+					props.children
+				)
+			)
 		);
 	};
 
@@ -28429,9 +28432,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _jquery = __webpack_require__(267);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
+	var _reactRouter = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28441,13 +28442,35 @@
 			null,
 			_react2.default.createElement(
 				'h2',
-				null,
+				{ className: 'text-center' },
 				'Examples'
 			),
 			_react2.default.createElement(
 				'p',
 				null,
-				'Welcome to examples page!'
+				'Here are few example locations to try out:'
+			),
+			_react2.default.createElement(
+				'ol',
+				null,
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{ to: '/?location=karachi' },
+						'Karachi, PK'
+					)
+				),
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{ to: '/?location=rio' },
+						'Rio, Brazil'
+					)
+				)
 			)
 		);
 	};
@@ -28455,12 +28478,7 @@
 	exports.default = Examples;
 
 /***/ },
-/* 267 */
-/***/ function(module, exports) {
-
-	module.exports = jQuery;
-
-/***/ },
+/* 267 */,
 /* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
