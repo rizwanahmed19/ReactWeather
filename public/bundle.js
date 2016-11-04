@@ -28410,9 +28410,47 @@
 
 	var About = function About(props) {
 		return _react2.default.createElement(
-			'h2',
+			'div',
 			null,
-			'About Component'
+			_react2.default.createElement(
+				'h2',
+				{ className: 'text-center' },
+				'About Component'
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				'This is a simple react application built on React. I\'ve made it to learn React...'
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				'Here are some of the tools that I\'ve used:'
+			),
+			_react2.default.createElement(
+				'ul',
+				null,
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ href: 'https://facebook.github.io/react' },
+						'React'
+					),
+					' - This was the Javascript framework used.'
+				),
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ href: 'http://www.openweathermap.org' },
+						'Open Weather Map'
+					),
+					' - This was used to get the weather data by city name.'
+				)
+			)
 		);
 	};
 
