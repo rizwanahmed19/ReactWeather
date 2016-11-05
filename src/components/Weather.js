@@ -14,7 +14,9 @@ class Weather extends Component {
 	handleSearch(location){
 		this.setState({
 			isLoading: true,
-			errorMessage: undefined
+			errorMessage: undefined,
+			location: undefined,
+			temp: undefined
 		});
 		OpenWeatherMap.getWeather(location)
 			.then(temp => {
@@ -31,9 +33,22 @@ class Weather extends Component {
 				});
 			})
 	}
+	componentDidMount(){
+		var location = this.props.location.query.location;
+		if (location && location.length > 0) {
+			this.handleSearch(location);
+			window.location.hash = '#/';
+		}
+	}
+	componentWillReceiveProps(newProps){
+		var location = newProps.location.query.location;
+		if (location && location.length > 0) {
+			this.handleSearch(location);
+			window.location.hash = '#/';
+		}	
+	}
 	render(){
 		var {isLoading, location, temp, errorMessage} = this.state;
-
 		function renderMessage(){
 			if (isLoading) {
 				return <h3 className='text-center'>Fetching weather...</h3>;

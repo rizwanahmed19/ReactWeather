@@ -26580,7 +26580,12 @@
 			key: 'onSearch',
 			value: function onSearch(e) {
 				e.preventDefault();
-				alert('Not yet wired up!');
+				var location = this.refs.location.value;
+				var encodedLocation = encodeURIComponent(location);
+				if (location.length > 0) {
+					window.location.hash = '#/?location=' + encodedLocation;
+					this.refs.location.value = '';
+				}
 			}
 		}, {
 			key: 'render',
@@ -26633,14 +26638,14 @@
 						{ className: 'top-bar-right' },
 						_react2.default.createElement(
 							'form',
-							{ onSubmit: this.onSearch },
+							{ onSubmit: this.onSearch.bind(this) },
 							_react2.default.createElement(
 								'ul',
 								{ className: 'menu' },
 								_react2.default.createElement(
 									'li',
 									null,
-									_react2.default.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
+									_react2.default.createElement('input', { ref: 'location', type: 'search', placeholder: 'Search weather by city' })
 								),
 								_react2.default.createElement(
 									'li',
@@ -26727,7 +26732,9 @@
 
 				this.setState({
 					isLoading: true,
-					errorMessage: undefined
+					errorMessage: undefined,
+					location: undefined,
+					temp: undefined
 				});
 				_OpenWeatherMap2.default.getWeather(location).then(function (temp) {
 					_this2.setState({
@@ -26743,6 +26750,24 @@
 				});
 			}
 		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var location = this.props.location.query.location;
+				if (location && location.length > 0) {
+					this.handleSearch(location);
+					window.location.hash = '#/';
+				}
+			}
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(newProps) {
+				var location = newProps.location.query.location;
+				if (location && location.length > 0) {
+					this.handleSearch(location);
+					window.location.hash = '#/';
+				}
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var _state = this.state;
@@ -26750,7 +26775,6 @@
 				var location = _state.location;
 				var temp = _state.temp;
 				var errorMessage = _state.errorMessage;
-
 
 				function renderMessage() {
 					if (isLoading) {
