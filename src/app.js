@@ -9,7 +9,7 @@ import Examples from './components/Examples';
 import 'style!css!foundation-sites/dist/foundation.min.css';
 $(document).foundation();
 
-import 'style!css!./styles/app.css';
+import 'style!css!sass!./styles/app.scss';
 
 ReactDOM.render(
 	<Router history={hashHistory}>
