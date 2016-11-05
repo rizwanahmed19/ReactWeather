@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 var Examples = props => {
 	return (
 			<div>
-				<h2 className='text-center'>Examples</h2>
+				<h2 className='text-center page-title'>Examples</h2>
 				<p>Here are few example locations to try out:</p>
 				<ol>
 					<li><Link to='/?location=karachi'>Karachi, PK</Link></li>
